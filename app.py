@@ -3,11 +3,11 @@ import uuid
 import logging
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from werkzeug.utils import secure_filename
-from core.table_detector import assess_cleanliness
+from table_detector import assess_cleanliness
 
 app = Flask(__name__)
 # Configurations
-app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['UPLOAD_FOLDER'] = '/tmp'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB max limit
 
 # Set up logging
